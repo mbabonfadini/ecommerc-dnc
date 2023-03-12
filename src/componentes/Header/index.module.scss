@@ -1,0 +1,69 @@
+@import '../../styles/variables';
+
+.header {
+    background-color: $preto-dnc;
+    margin: 0;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 3em;
+
+        &__logo {
+            margin: 1em 0;
+            width: 7%;
+            height: 80%;
+        }
+
+        &_carrinho {
+            width: 60px;
+            width: 80px;
+        }
+
+        input {
+            width: 80%;
+            height: 30px;
+            color: $preto-dnc;
+            background-color: $detalhamento;
+            border-style: none;
+            border-radius: 10px;
+            background-image: url('./lupa.svg');
+            background-repeat: no-repeat;
+            background-size: 15px;
+            background-position: 1em;
+            padding-left: 3em;
+            margin-bottom: 1em;
+
+        }
+    }
+
+    &__bottom {
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+            
+        }
+
+        li {
+            list-style: none;
+            padding:0 0 0.5em 0;
+        }
+
+        a {
+            color: $detalhamento;
+            font-weight: 700px;
+            font-size: 1.5em;
+            
+        }
+
+        a:hover {
+            color: $azul-dnc;
+            font-weight: 700px;
+            font-size: 1.5em;
+            
+        }
+    }
+}
