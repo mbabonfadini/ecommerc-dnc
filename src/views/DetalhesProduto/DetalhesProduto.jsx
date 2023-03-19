@@ -33,8 +33,9 @@ const DetalhesProduto = () => {
           <div>
             <p className="detalhe__produto--preco">R$ 2.000,00</p>
             <p className="detalhe__produto--cor">Cor: Preto</p>
+            <p className="detalhe__produto--corBox"></p>
           </div>
-          <div className="detalhe__produto-botao">
+          <div className="detalhe__produto--botao">
             <button>
               <img src="../../shopping-cart.png" alt="Carrinho de Compras" />
               Adicionar ao carrinho
