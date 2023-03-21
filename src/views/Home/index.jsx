@@ -1,9 +1,8 @@
 import React from "react";
 import "./index.scss";
-import StoreSection from "../../componentes/StoreSection/StoreSection";
-import Footer from "../../componentes/Footer/Footer";
+import StoreSection from "../../componentes/StoreSection";
 import { useEffect } from "react";
-import StoreHeader from "../../componentes/StoreHeader/StoreHeader";
+
 
 export default function Home({ data }) {
   function descerPagina() {
@@ -16,7 +15,6 @@ export default function Home({ data }) {
 
   return (
     <div>
-      <StoreHeader />
       <section>
         <img
           src="ad.svg"
@@ -31,10 +29,6 @@ export default function Home({ data }) {
           <StoreSection data={item} key={key} />
         ))}
       </section>
-
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 }
