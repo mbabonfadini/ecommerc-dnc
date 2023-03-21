@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
-import Footer from "../../componentes/Footer/Footer";
-import StoreHeader from "../../componentes/StoreHeader/StoreHeader";
+import Modal from "../../componentes/modal";
+import FormFinalizador from "../../componentes/FormFinalizador";
+import { useNavigate } from "react-router";
 
 const DetalhesProduto = () => {
+
+  const [modal, setModal] = useState(false)
+
+  const navegar = useNavigate()
+
+  function comprar() {
+    setModal(!modal)
+    navegar("/home")
+  }
+
   return (
     <>
-      <div>
-        <StoreHeader />
-      </div>
-
       <section className="detalhe__produto">
         <section className="detalhe__produto--imgDescricao">
           <div className="detalhe__produto--img">
@@ -36,17 +43,15 @@ const DetalhesProduto = () => {
             <p className="detalhe__produto--corBox"></p>
           </div>
           <div className="detalhe__produto--botao">
-            <button>
+            <button onClick={() => setModal(!modal)}>
               <img src="../../shopping-cart.png" alt="Carrinho de Compras" />
               Adicionar ao carrinho
             </button>
           </div>
         </section>
       </section>
+      {modal ? <Modal><FormFinalizador onSubmit={() => comprar()} /></Modal> : ""}
 
-      <div>
-        <Footer />
-      </div>
     </>
   );
 };
