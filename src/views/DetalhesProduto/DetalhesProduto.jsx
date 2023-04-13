@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import Modal from "../../componentes/modal";
 import FormFinalizador from "../../componentes/FormFinalizador";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import PRODUCTS_MOCK from "../../mock/products.mock";
 
 const DetalhesProduto = () => {
-
+  const params = useParams()
+  const [produto,setProduto]= useState({})
   const [modal, setModal] = useState(false)
 
   const navegar = useNavigate()
+
+  useEffect(()=>{
+    setProduto(PRODUCTS_MOCK.filter(p=>p.id === params.id))
+    console.log(produto)
+  },[produto])
+  
+
 
   function comprar() {
     setModal(!modal)
@@ -23,19 +32,16 @@ const DetalhesProduto = () => {
             <img src="../product-1.png" alt="Produto" />
           </div>
           <p className="detalhe__produto--nome">
-            Microsoft Xbox Series X | Preto
+            {produto.title}
           </p>
           <p className="detalhe__produto--descricao">Descrição</p>
           <p className="detalhe__produto--descricaoDetalhada">
-            Apresentamos o Xbox Series X, nosso console mais rápido e poderoso
-            de todos os tempos. Jogue milhares de títulos de quatro gerações de
-            consoles- todos os jogos têm melhor aparência e são melhor
-            executados no Xbox Series X.
+            {produto.description}
           </p>
           <p className="detalhe__produto--linhaInferior"></p>
         </section>
         <section className="detalhe__produto--informacoes">
-          <h3>Microsoft Xbox Series X | Preto</h3>
+          <h3>{produto.title}</h3>
           <p className="detalhe__produto--linhaInferior"></p>
           <div>
             <p className="detalhe__produto--preco">R$ 2.000,00</p>
