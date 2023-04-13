@@ -1,15 +1,9 @@
-@import '../../styles/variables';
-
-body {
-    background: $preto-dnc ;
-}
-
 .footer {
-    background: #0C70F2;
     display: flex;
+    flex-direction: row;
 
     img {
-        width: 190px;
+        width: 160px;
         padding-left: 50px;
         padding-top: 20px;
         padding-bottom: 30px;

@@ -1,0 +1,117 @@
+@use "../../styles/variables" as *; 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $background;
+    font-family: $font-padrao;
+}
+
+.detalhe__produto{
+    display: flex;
+    flex-direction: row;
+    margin: 6rem;
+
+
+    &--imgDescricao {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        color: $preto-corpo;
+        margin-right: 8rem;
+    }
+
+
+    &--img {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    &--nome {
+        font-size: 1.25rem;
+        margin-top: 3rem;
+        text-align: center;
+    }
+
+    &--descricao {
+        font-size: 1.5625rem;
+        text-align: left;
+        font-weight: 700;
+        margin: 2rem 0 2rem 0;
+        
+    }
+
+    &--descricaoDetalhada {
+        font-size: 1.125rem;
+        text-align: justify;
+    }
+
+    &--linhaInferior {
+        border-bottom: .1875rem $azul-dnc solid;
+        margin-top: .9375rem;
+        
+    }
+
+    &--informacoes {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        
+        h3 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+    }
+
+    &--preco {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: left;
+        margin-top: 3.75rem
+    }
+
+    &--cor {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: .625rem;
+        margin-bottom: .9375rem;
+    }
+
+    &--corBox {
+        width: 4rem;
+        height: 3.75rem;
+        border-radius: .625rem;
+        border: 1px solid $azul-dnc;
+        margin-bottom: 11rem;
+    }
+    &--botao {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+button {
+    width: 31.875rem;
+    height: 3.8125rem;
+    color: white;
+    background-color: $azul-dnc;
+    text-align: center;
+    font-size: 1.25rem;    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+button img {
+    margin-right: .3125rem;
+}
+
+
