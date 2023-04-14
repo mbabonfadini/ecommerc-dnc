@@ -7,9 +7,7 @@ const StoreSection = ({ data }) => {
       <img src={data.imgPath}></img>
       <div className="card__titles">
         <p>{data.title}</p>
-        <button>
-          <Link to={`/produto/${data.id}`}>Ver Mais</Link>
-        </button>
+        <Link className="card__titles__link" to={`/produto/${data.id}`}>Ver Mais</Link>
       </div>
     </div>
   );

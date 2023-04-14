@@ -1,20 +1,16 @@
-    footer{
+    footer {
+        background: #0C70F2;
+        padding: 2rem;
+        display: flex;
+        align-items: left;
+        color: #fff;
+        bottom: 0;
 
-    background: #0C70F2;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-        p{
+        p {
             max-width: 50%;
         }
 
-            img{
-                margin-bottom: 2rem;
-            }
+        img {
+            margin-bottom: 2rem;
+        }
     }
-    
-    
-    

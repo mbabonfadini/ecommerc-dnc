@@ -5,6 +5,8 @@ import Login from "./views/Login";
 import PaginaPadrao from "./views/Padrao";
 import Produtos from "./views/Produtos";
 import DetalhesProduto from "./views/DetalhesProduto/DetalhesProduto";
+import { PRODUCTS_MOCK } from "./mock/products.mock";
+
 
 export default function Router() {
     return (

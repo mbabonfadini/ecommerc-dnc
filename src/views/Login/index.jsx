@@ -20,7 +20,6 @@ const Login = () => {
   
   return (
     <section className='login'>
-      <Header/>
       <form className="login__form" onSubmit={(evento)=> Submit(evento)} >
         <h1>Acesse com seu login ou cadastre-se!</h1>
         <h2>você pode entrar com o seu CPF</h2>

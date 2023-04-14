@@ -8,16 +8,16 @@ import { Link } from "react-router-dom";
 import { PRODUCTS_MOCK } from "../../mock/products.mock";
 
 const detalhesProduto = () => {
-  const { produtoId } = useParams();
-  const produto = PRODUCTS_MOCK.find((product) => product.id == produtoId);
+  const { produtoid } = useParams();
+  const produto = PRODUCTS_MOCK.find((product) => product.id == produtoid);
 
   const [modal, setModal] = useState(false);
   const navegar = useNavigate();
 
-  useEffect(()=>{
-    setProduto(PRODUCTS_MOCK.filter(p=>p.id === params.id))
-    console.log(produto)
-  },[produto])
+  // useEffect(()=>{
+  //   setProduto(PRODUCTS_MOCK.filter(p=>p.id === params.id))
+  //   console.log(produto)
+  // },[produto])
   
 
 
