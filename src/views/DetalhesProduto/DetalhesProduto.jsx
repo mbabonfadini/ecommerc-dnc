@@ -3,6 +3,7 @@ import "./index.scss";
 import Modal from "../../componentes/modal";
 import FormFinalizador from "../../componentes/FormFinalizador";
 import { useNavigate, useParams } from "react-router";
+
 import { Link } from "react-router-dom";
 import { PRODUCTS_MOCK } from "../../mock/products.mock";
 
@@ -12,6 +13,13 @@ const detalhesProduto = () => {
 
   const [modal, setModal] = useState(false);
   const navegar = useNavigate();
+
+  useEffect(()=>{
+    setProduto(PRODUCTS_MOCK.filter(p=>p.id === params.id))
+    console.log(produto)
+  },[produto])
+  
+
 
   function comprar() {
     setModal(!modal);
@@ -25,7 +33,9 @@ const detalhesProduto = () => {
           <div className="detalhe__produto--img">
             <img src={produto.imgPathDetail} alt={produto.title} />
           </div>
+
           <p className="detalhe__produto--nome">{produto.title}</p>
+
           <p className="detalhe__produto--descricao">Descrição</p>
           <p className="detalhe__produto--descricaoDetalhada">
             {produto.description}
