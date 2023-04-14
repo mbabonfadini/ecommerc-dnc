@@ -79,18 +79,16 @@ body {
         font-size: 1.5rem;
         font-weight: 600;
         margin-top: .625rem;
+        margin-bottom: .9375rem;
     }
 
     &--corBox {
-        width: 2.5rem;
-        height: 2.5rem;
-        border-Radius: .625rem;
-        background-Color: black;
-        border: .0625rem solid black;
-        margin-top: .625rem;
-        margin-bottom: 12.5rem;
+        width: 4rem;
+        height: 3.75rem;
+        border-radius: .625rem;
+        border: 1px solid $azul-dnc;
+        margin-bottom: 11rem;
     }
-
     &--botao {
         display: flex;
         flex-direction: column;
