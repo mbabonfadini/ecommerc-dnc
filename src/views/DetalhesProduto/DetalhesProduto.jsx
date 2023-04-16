@@ -3,9 +3,8 @@ import "./index.scss";
 import Modal from "../../componentes/modal";
 import FormFinalizador from "../../componentes/FormFinalizador";
 import { useNavigate, useParams } from "react-router";
-
-import { Link } from "react-router-dom";
 import { PRODUCTS_MOCK } from "../../mock/products.mock";
+import AddCarrinho from "../../componentes/AddCarrinho";
 
 const detalhesProduto = () => {
   const { produtoid } = useParams();
@@ -14,11 +13,6 @@ const detalhesProduto = () => {
   const [modal, setModal] = useState(false);
   const navegar = useNavigate();
 
-  // useEffect(()=>{
-  //   setProduto(PRODUCTS_MOCK.filter(p=>p.id === params.id))
-  //   console.log(produto)
-  // },[produto])
-  
 
 
   function comprar() {
@@ -57,7 +51,7 @@ const detalhesProduto = () => {
           </div>
           <div className="detalhe__produto--botao">
             <button onClick={() => setModal(!modal)}>
-              <Link to={`/produto/${produto.id}`}></Link>
+              {/* <Link to={`/produto/${produto.id}`}></Link> */}
               <img src="../../shopping-cart.png" alt="Carrinho de Compras" />
               Adicionar ao carrinho
             </button>
@@ -65,10 +59,7 @@ const detalhesProduto = () => {
         </section>
       </section>
       {modal ? (
-        <Modal>{<FormFinalizador onSubmit={() => comprar()} />}</Modal>
-      ) : (
-        ""
-      )}
+        <Modal>{<AddCarrinho item={produto}/>}</Modal>) : ("")}
     </>
   );
 };
