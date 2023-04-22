@@ -34,7 +34,8 @@ Uso das seguintes tecnologias:
 - Node JS.
 ###
 ## ✅ Deploy
-.......
+https://ecommerc-k55kczc8a-mbabonfadini.vercel.app
+
 ###
 ## 💻Rodando os testes 
 
