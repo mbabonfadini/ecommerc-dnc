@@ -1,7 +1,9 @@
+@import '../../scss/variables';
+
 footer {
     display: flex;
     flex-direction: row;
-    background: #0C70F2;
+    background: $azul-dnc;
     padding: 2rem;
 
     img {
@@ -12,7 +14,7 @@ footer {
     }
 
     p {
-        color: #FFFFFF;
+        color: $branco-dnc;
         font-size: 20px;
         margin-top: 35px;
         padding-left: 50px;

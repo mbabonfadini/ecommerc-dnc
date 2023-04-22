@@ -1,51 +1,61 @@
 import { Link, useNavigate } from "react-router-dom";
 import FormFinalizador from "../FormFinalizador";
 import { useState } from "react";
+import style from "./index.module.scss";
 import Modal from "../modal";
 
 export default function AddCarrinho({ item }) {
+  const [modal, setModal] = useState(false);
+  const navegar = useNavigate();
 
-    const [modal, setModal] = useState(false);
-    const navegar = useNavigate();
+  function comprar() {
+    setModal(!modal);
+    navegar("/home");
+  }
 
-    function comprar() {
-        setModal(!modal);
-        navegar("/home");
-    }
-
-    return (
-        <>
-            <section className="detalhe__produto">
-                <section className="detalhe__produto--imgDescricao">
-                    <div className="detalhe__produto--img">
-                        <img src={item.imgPathDetail} alt={item.title} />
-                    </div>
-                </section>
-                <section className="detalhe__produto--informacoes">
-                    <p className="detalhe__produto--nome">Meu Carrinho</p>
-                    <h3>{item.title}</h3>
-                    <p className="detalhe__produto--linhaInferior"></p>
-                    <div>
-                        <p className="detalhe__produto--preco">{item.price}</p>
-                        <p className="detalhe__produto--cor">Cor: {item.colors}</p>
-                        <p
-                            className="detalhe__produto--corBox"
-                            style={{
-                                backgroundColor: item.colors,
-                            }}
-                        ></p>
-                    </div>
-                    <div className="detalhe__produto--botao">
-                        <Link to='/home' >Continuar comprando</Link>
-                        <button onClick={() => setModal(!modal)}>
-                            <img src="../../shopping-cart.png" alt="Carrinho de Compras" />
-                            Finalizar compra
-                        </button>
-                    </div>
-                </section>
-            </section>
-            {modal ? (
-                <Modal>{<FormFinalizador onSubmit={()=>comprar()} />}</Modal>) : ("")}
-        </>
-    )
+  return (
+    <>
+      <section className={style.detalhe__carinho}>
+        <section className={style.detalhe__carinho__img}>
+          <img src={item.imgPathDetail} alt={item.title} />
+        </section>
+        <section className={style.detalhe__carinho__informacoes}>
+          <p className={style.detalhe__carinho__informacoes__nome}>
+            Meu Carrinho
+          </p>
+          <h3>{item.title}</h3>
+          <p className={style.detalhe__carinho__informacoes__linha}></p>
+          <p className={style.detalhe__carinho__informacoes__preco}>
+            {item.price}
+          </p>
+          <p className={style.detalhe__carinho__informacoes__cor}>
+            Cor: {item.colorName}
+          </p>
+          <p
+            className={style.detalhe__carinho__informacoes__corBox}
+            style={{
+              backgroundColor: item.colors,
+            }}
+          ></p>
+          <section className={style.detalhe__carinho__botao}>
+            <button className={style.detalhe__carinho__botao__continuar}>
+              {" "}
+              <Link to="/home">Continuar comprando</Link>
+            </button>
+            <button
+              className={style.detalhe__carinho__botao__finalizar}
+              onClick={() => setModal(!modal)}
+            >
+              Finalizar compra
+            </button>
+          </section>
+        </section>
+      </section>
+      {modal ? (
+        <Modal>{<FormFinalizador onSubmit={() => comprar()} />}</Modal>
+      ) : (
+        ""
+      )}
+    </>
+  );
 }

@@ -13,8 +13,6 @@ const detalhesProduto = () => {
   const [modal, setModal] = useState(false);
   const navegar = useNavigate();
 
-
-
   function comprar() {
     setModal(!modal);
     navegar("/home");
@@ -41,7 +39,7 @@ const detalhesProduto = () => {
           <p className="detalhe__produto--linhaInferior"></p>
           <div>
             <p className="detalhe__produto--preco">{produto.price}</p>
-            <p className="detalhe__produto--cor">Cor: {produto.colors}</p>
+            <p className="detalhe__produto--cor">Cor: {produto.colorName}</p>
             <p
               className="detalhe__produto--corBox"
               style={{
@@ -58,8 +56,7 @@ const detalhesProduto = () => {
           </div>
         </section>
       </section>
-      {modal ? (
-        <Modal>{<AddCarrinho item={produto}/>}</Modal>) : ("")}
+      {modal ? <Modal>{<AddCarrinho item={produto} />}</Modal> : ""}
     </>
   );
 };

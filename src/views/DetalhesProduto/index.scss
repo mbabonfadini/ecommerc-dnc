@@ -1,4 +1,4 @@
-@use "../../styles/variables" as *; 
+@import '../../scss/variables';
 
 * {
     margin: 0;
@@ -69,8 +69,10 @@ body {
     }
 
     &--preco {
-        font-size: 2rem;
-        font-weight: 700;
+        font-size: 2rem;        
+        font-family: $font-Inter;
+        color: #2D2D2D;
+        font-weight: 900;
         text-align: left;
         margin-top: 3.75rem
     }
