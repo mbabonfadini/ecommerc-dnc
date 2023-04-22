@@ -1,31 +1,21 @@
-@import '../../styles/variables';
+@import '../../scss/variables';
 
 body {
     background: $preto-dnc ;
-}
-
-.footer {
-    background: #0C70F2;
-    display: flex;
 
     img {
-        width: 190px;
-        padding-left: 50px;
-        padding-top: 20px;
-        padding-bottom: 30px;
+        width: 100%;
     }
-
-    p {
-        color: #FFFFFF;
-        font-size: 20px;
-        margin-top: 35px;
-        padding-left: 50px;
-        margin-left: 40px;
-        margin-bottom: 25px;
-    }
-
-    span {
-        font-weight: bold;
-    }
-
 }
+
+.galery {
+    background: $preto-dnc ;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    padding: 3rem;
+    margin-top: -10px;
+    text-align: center;
+    justify-content: center;
+}
+

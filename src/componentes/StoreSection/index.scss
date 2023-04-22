@@ -1,34 +1,25 @@
-@import '../../styles/variables';
+@import '../../scss/variables';
 
 .home__card {
-    display: inline-block;
-    width: 18%;
-    padding-left: 100px;
-    margin-left: 200px;
-    margin-right: 30px;
-    margin-top: 40px;
-    background: #FFFFFF;
-    border: 1px solid #B7B7B7;
+    vertical-align: bottom;
+    width: 400px;
+    height: 400px;
+    background: $branco-dnc;
+    border: 1px solid $border-search;
     border-radius: 10px;
-    margin-bottom: 70px;
-
-
-
+    padding: 0.75rem;
+    text-align: center;
 
     img {
-        max-width: 141%;
-        transform: translate(-29%);
+        max-width: 300px;
         border-bottom: 1px solid gray;
-
-
-
     }
 
     p {
-        padding-top: 20px;
-        transform: translateX(-3%);
+        // padding-top: 20px;
         color: #252423;
-        font-size: 12px;
+        font-size: 16px;
+        margin-bottom: 1rem ;
         width: 100%;
     }
 
@@ -37,37 +28,26 @@
 }
 
 .card__titles {
+    text-align: center;
+    margin-top: 2rem;
 
-
-
-    button {
-        width: 160px;
-        height: 30px;
-        margin-top: 20px;
+    a {
+        padding: 0.5rem 2rem;
         margin-bottom: 20px;
-        background: #0C70F2;
+        background: $azul-dnc;
         border: 1px solid rgba(0, 0, 0, 0.3);
         border-radius: 0;
-        text-decoration: none !important;
-        color: #FFFFFF;
+        color: $branco-dnc;
         font-size: 14px;
-        transform: translateX(-4%);
         opacity: 1;
-
-
-
-        a {
-            text-decoration: none !important;
-            color: #FFFFFF;
-            font-weight: bold;
-
-        }
+        text-decoration: none;
+        color: $branco-dnc;
+        font-weight: bold;
 
     }
 
-    button:hover {
-        opacity: 0.9;
-    }
+}
 
-
+button:hover {
+    opacity: 0.9;
 }

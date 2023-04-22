@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import '../../scss/variables';
 
 .input {
     display: flex;
@@ -12,7 +12,7 @@
 
     input {
         width: 100%;
-        border: 2px solid #7A7A7A;
+        border: 2px solid $border-dnc;
         border-radius: 10px;
         padding: 1em;
         margin: 1em 0 2em 0;

@@ -1,4 +1,4 @@
-@use "../../styles/variables" as *; 
+@import '../../scss/variables';
 
 * {
     margin: 0;
@@ -20,7 +20,7 @@ body {
         display: flex;
         flex-direction: column;
         width: 40%;
-        color: $preto-corpo;
+        color: $preto-dnc;
         margin-right: 8rem;
     }
 
@@ -69,8 +69,10 @@ body {
     }
 
     &--preco {
-        font-size: 2rem;
-        font-weight: 700;
+        font-size: 2rem;        
+        font-family: $font-Inter;
+        color: #2D2D2D;
+        font-weight: 900;
         text-align: left;
         margin-top: 3.75rem
     }
@@ -79,22 +81,25 @@ body {
         font-size: 1.5rem;
         font-weight: 600;
         margin-top: .625rem;
+        margin-bottom: .9375rem;
     }
 
     &--corBox {
-        width: 2.5rem;
-        height: 2.5rem;
-        border-Radius: .625rem;
-        background-Color: black;
-        border: .0625rem solid black;
-        margin-top: .625rem;
-        margin-bottom: 12.5rem;
+        width: 4rem;
+        height: 3.75rem;
+        border-radius: .625rem;
+        border: 1px solid $azul-dnc;
+        margin-bottom: 11rem;
     }
-
     &--botao {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        img {
+            width: 20px;
+            margin-right: 0.75rem;
+        }
     }
 
 }

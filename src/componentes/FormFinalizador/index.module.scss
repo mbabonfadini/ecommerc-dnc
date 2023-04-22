@@ -1,8 +1,27 @@
+@import '../../scss/variables';
+
+
 .form {
-    width: 70%;
+    width: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    font-family: $font-padrao;
+    font-size: 1.25rem;
+    color: $black;
+    font-weight: 400;
+
+    p {
+        color: $azul-dnc;
+        font-weight: 700;
+        font-size: 2.5rem;
+        margin-top: 3rem;
+        text-align: left;
+    }
+
+    button {
+        margin-top: 1rem;
+    }
 }
+

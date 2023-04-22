@@ -24,10 +24,12 @@ export default function Home({ data }) {
             margin: 0,
           }}
         />
+        <div className="galery">
 
-        {data.map((item, key) => (
-          <StoreSection data={item} key={key} />
-        ))}
+          {data.map((item, key) => (
+            <StoreSection data={item} key={key} />
+          ))}
+        </div>
       </section>
     </div>
   );

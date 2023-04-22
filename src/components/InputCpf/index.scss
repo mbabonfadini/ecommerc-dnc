@@ -1,0 +1,10 @@
+@import '../../scss/variables';
+
+input{
+    width: 400px;
+    height: 30px;
+    font-family: $font-padrao;
+    border: 1px solid $black;
+    border-radius: 5px;
+    padding-left: 10px;
+}

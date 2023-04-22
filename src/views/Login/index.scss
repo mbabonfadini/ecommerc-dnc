@@ -1,0 +1,74 @@
+@import '../../scss/variables';
+
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__form {
+    margin-top: 10rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 26px;
+  }
+
+  label {
+    text-align: left;
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  &__input-wrapper {
+    max-width: 524px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    margin-top: 84px;
+  }
+
+  &__input-name {
+    margin-bottom: 18px;
+  }
+
+  input {
+    height: 26px;
+    padding: 18px 13px;
+    border: 2px solid ;
+    border-radius: 10px;
+    background-color: $background;
+    border: 2px solid $border-dnc;
+    color: $preto-dnc;
+    
+  }
+
+  button {
+    width: 524px;
+    margin-right: 10px;
+    border: none;
+    background-color: $azul-dnc;
+    border-radius: 6px;
+    padding: 13px;
+    margin-top: 66px;
+    margin-bottom: 200px;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 21px;
+    color: $detalhamento;
+  }
+
+  a {
+    text-decoration: none;
+    color: $detalhamento;
+  }
+}

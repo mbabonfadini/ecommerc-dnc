@@ -1,0 +1,12 @@
+.btnFinalizar{
+
+    button{
+        background-color: #676767;
+        cursor: pointer;
+    }
+
+    button:hover{
+        transition: all ease 0.3s;
+        background-color: #4b4b4b;
+    }
+}

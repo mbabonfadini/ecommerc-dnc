@@ -1,27 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.scss";
 import Modal from "../../componentes/modal";
 import FormFinalizador from "../../componentes/FormFinalizador";
 import { useNavigate, useParams } from "react-router";
-import PRODUCTS_MOCK from "../../mock/products.mock";
+import { PRODUCTS_MOCK } from "../../mock/products.mock";
+import AddCarrinho from "../../componentes/AddCarrinho";
 
-const DetalhesProduto = () => {
-  const params = useParams()
-  const [produto,setProduto]= useState({})
-  const [modal, setModal] = useState(false)
+const detalhesProduto = () => {
+  const { produtoid } = useParams();
+  const produto = PRODUCTS_MOCK.find((product) => product.id == produtoid);
 
-  const navegar = useNavigate()
-
-  useEffect(()=>{
-    setProduto(PRODUCTS_MOCK.filter(p=>p.id === params.id))
-    console.log(produto)
-  },[produto])
-  
-
+  const [modal, setModal] = useState(false);
+  const navegar = useNavigate();
 
   function comprar() {
-    setModal(!modal)
-    navegar("/home")
+    setModal(!modal);
+    navegar("/home");
   }
 
   return (
@@ -29,11 +23,11 @@ const DetalhesProduto = () => {
       <section className="detalhe__produto">
         <section className="detalhe__produto--imgDescricao">
           <div className="detalhe__produto--img">
-            <img src="../product-1.png" alt="Produto" />
+            <img src={produto.imgPathDetail} alt={produto.title} />
           </div>
-          <p className="detalhe__produto--nome">
-            {produto.title}
-          </p>
+
+          <p className="detalhe__produto--nome">{produto.title}</p>
+
           <p className="detalhe__produto--descricao">Descrição</p>
           <p className="detalhe__produto--descricaoDetalhada">
             {produto.description}
@@ -44,22 +38,27 @@ const DetalhesProduto = () => {
           <h3>{produto.title}</h3>
           <p className="detalhe__produto--linhaInferior"></p>
           <div>
-            <p className="detalhe__produto--preco">R$ 2.000,00</p>
-            <p className="detalhe__produto--cor">Cor: Preto</p>
-            <p className="detalhe__produto--corBox"></p>
+            <p className="detalhe__produto--preco">{produto.price}</p>
+            <p className="detalhe__produto--cor">Cor: {produto.colorName}</p>
+            <p
+              className="detalhe__produto--corBox"
+              style={{
+                backgroundColor: produto.colors,
+              }}
+            ></p>
           </div>
           <div className="detalhe__produto--botao">
             <button onClick={() => setModal(!modal)}>
+              {/* <Link to={`/produto/${produto.id}`}></Link> */}
               <img src="../../shopping-cart.png" alt="Carrinho de Compras" />
               Adicionar ao carrinho
             </button>
           </div>
         </section>
       </section>
-      {modal ? <Modal><FormFinalizador onSubmit={() => comprar()} /></Modal> : ""}
-
+      {modal ? <Modal>{<AddCarrinho item={produto} />}</Modal> : ""}
     </>
   );
 };
 
-export default DetalhesProduto;
+export default detalhesProduto;
