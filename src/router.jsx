@@ -11,10 +11,10 @@ export default function Router() {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path="/" element={<Login />} />
                 <Route path="/" element={<PaginaPadrao />}>
-                    <Route index element={<Login />} />
                     <Route path="home" element={<Home data={PRODUCTS_MOCK} />} />
-                    <Route path="produto/:produtoid" element={<DetalhesProduto data={PRODUCTS_MOCK}/>} />
+                    <Route path="produto/:produtoid" element={<DetalhesProduto data={PRODUCTS_MOCK} />} />
                 </Route>
             </Routes>
         </BrowserRouter>

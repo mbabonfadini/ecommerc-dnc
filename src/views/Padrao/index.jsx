@@ -6,9 +6,9 @@ import Header from '../../componentes/Header'
 export default function PaginaPadrao() {
     return (
         <section>
-            <Header/>
+            <Header />
             <Outlet />
-            <Footer/>
+            <Footer />
         </section>
     )
 }
