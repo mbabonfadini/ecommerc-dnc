@@ -3,12 +3,11 @@ import "./index.scss";
 import Modal from "../../componentes/modal";
 import FormFinalizador from "../../componentes/FormFinalizador";
 import { useNavigate, useParams } from "react-router";
-import { PRODUCTS_MOCK } from "../../mock/products.mock";
 import AddCarrinho from "../../componentes/AddCarrinho";
 
-const detalhesProduto = () => {
+const detalhesProduto = ({data}) => {
   const { produtoid } = useParams();
-  const produto = PRODUCTS_MOCK.find((product) => product.id == produtoid);
+  const produto = data.find((product) => product.id == produtoid);
 
   const [modal, setModal] = useState(false);
   const navegar = useNavigate();
