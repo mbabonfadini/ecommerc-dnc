@@ -70,7 +70,7 @@ https://github.com/mbabonfadini/ecommerc-dnc.git
 ![App Screenshot](https://i.imgur.com/16HZMRf.png)
 ###
 ### Detalhes do Produto
-![App Screenshot](https://i.imgur.com/16HZMRf.png)
+![App Screenshot](https://i.imgur.com/ROiXcmH.png)
 ###
 ### Carrinho
 ![App Screenshot](https://i.imgur.com/7BzuxC1.png)
